@@ -6,5 +6,6 @@ I wanted to be able to see specifically how many customers came to my restaurant
 
 Right now this addon just gives you a little popup on the screen that shows you counters for various stats as well as showing number of people served out of attended in the Summary Popup
 
-![Image](Screenshots/Screenshot 2025-07-22 163402.png)
-![Image2](Screenshots/Screenshot 2025-07-22 163416.png)
+![Image](https://github.com/Rukongai/TavernMasterCRM/blob/master/Screenshots/Screenshot%202025-07-22%20163402.png?raw=true)
+
+![Image2](https://github.com/Rukongai/TavernMasterCRM/blob/master/Screenshots/Screenshot%202025-07-22%20163416.png?raw=true)
