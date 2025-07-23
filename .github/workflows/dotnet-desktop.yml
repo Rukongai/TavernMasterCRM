@@ -3,7 +3,6 @@ name: Build & Release TavernMasterCRM
 on:
   push:
     branches: [ main ]
-    tags: [ 'v*' ]
   pull_request:
     branches: [ main ]
 
