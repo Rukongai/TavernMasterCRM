@@ -26,7 +26,7 @@ jobs:
     - name: Zip DLL
       run: |
         mkdir artifacts
-        powershell Compress-Archive -Path .\TavCRM\bin\Release\TavernMasterCRM.dll -DestinationPath artifacts/TavernMasterCRM.zip
+        powershell Compress-Archive -Path .\TavCRM\bin\Release\TavCRM.dll -DestinationPath artifacts/TavernMasterCRM.zip
 
     - name: Upload build artifact (for workflow/manual download)
       uses: actions/upload-artifact@v4
