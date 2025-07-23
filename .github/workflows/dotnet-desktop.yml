@@ -18,10 +18,10 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Restore NuGet packages
-      run: nuget restore TavernMasterCRM.sln
+      run: nuget restore TavCRM.sln
 
     - name: Build
-      run: msbuild /p:Configuration=Release TavernMasterCRM.sln
+      run: msbuild /p:Configuration=Release TavCRM.sln
 
     - name: Zip DLL
       run: |
