@@ -9,7 +9,7 @@ namespace RukonMods.TavCRM
     {
         private const string MyGuid = "com.rukonmods.tavcrm";
         private const string PluginName = "TavCRM";
-        private const string VersionString = "1.0.0";
+        private const string VersionString = "1.0.3";
 
         private static readonly Harmony Harmony = new Harmony(MyGuid);
 
