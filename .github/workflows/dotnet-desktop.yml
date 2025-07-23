@@ -1,0 +1,44 @@
+name: Build & Release TavernMasterCRM
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Restore NuGet packages
+      run: nuget restore TavernMasterCRM.sln
+
+    - name: Build
+      run: msbuild /p:Configuration=Release TavernMasterCRM.sln
+
+    - name: Zip DLL
+      run: |
+        mkdir artifacts
+        powershell Compress-Archive -Path TavernMasterCRM\bin\Release\TavernMasterCRM.dll -DestinationPath artifacts/TavernMasterCRM.zip
+
+    - name: Upload build artifact (for workflow/manual download)
+      uses: actions/upload-artifact@v4
+      with:
+        name: TavernMasterCRM
+        path: artifacts/TavernMasterCRM.zip
+
+    - name: Create GitHub Release and upload zip
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v2
+      with:
+        name: TavernMasterCRM ${{ github.ref_name }}
+        tag_name: ${{ github.ref_name }}
+        files: artifacts/TavernMasterCRM.zip
+        generate_release_notes: true
